@@ -74,15 +74,21 @@ KEY:
 
 VALUE:
 	Letters
+	| Digits
+	| STRING_LITERAL
+	| OBJECT
 	| AGOMAN
 	| GIT
 	| STARTUP
 	| CORPORATE
 	| INDIVIDUAL
-	| Digits
-	| STRING_LITERAL
 	;
 
+OBJECT:
+	CURLY_BRACK_OPEN DATA_PAIR* CURLY_BRACK_CLOSE
+	;
+
+// TODO: Check if we need to discard Comma or not
 WHITESPACE: ('\t' | ' ' | '\n' '\r')+ -> skip
 	;
 
@@ -92,6 +98,10 @@ COMMENT:
 
 NEWLINE:
 	'\n'
+	;
+
+SEPARATOR_COM:
+	',' -> channel(HIDDEN)
 	;
 
 CURLY_BRACK_OPEN:
