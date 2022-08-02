@@ -1,0 +1,2 @@
+start /B /wait CMD /C call antlr4 -o D:\agohya\lang\spec\dart_lp\lib\antlr4_gen -Dlanguage=Dart D:\agohya\lang\spec\grammar\AgohyaSpecLexer.g4 -visitor -no-listener
+start /B /wait CMD /C call antlr4 -o D:\agohya\lang\spec\dart_lp\lib\antlr4_gen -Dlanguage=Dart D:\agohya\lang\spec\grammar\AgohyaSpecParser.g4 -visitor -no-listener

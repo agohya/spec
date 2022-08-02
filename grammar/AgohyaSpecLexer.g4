@@ -89,11 +89,11 @@ OBJECT:
 	;
 
 // TODO: Check if we need to discard Comma or not
-WHITESPACE: ('\t' | ' ' | '\n' '\r')+ -> skip
+WHITESPACE: ('\t' | ' ' | '\n' | '\r')+ -> skip
 	;
 
 COMMENT:
-	'#' ~[\r\n]* -> skip
+	'//' ~[\r\n]* -> skip
 	;
 
 NEWLINE:
